@@ -1,0 +1,95 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
+| Date         : Tue Oct 22 23:53:26 2024
+| Host         : LAPTOP-QJ9BJU4G running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file topLevel_control_sets_placed.rpt
+| Design       : topLevel
+| Device       : xc7a35t
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    17 |
+|    Minimum number of control sets                        |    17 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    91 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    17 |
+| >= 0 to < 4        |     8 |
+| >= 4 to < 6        |     2 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     1 |
+| >= 10 to < 12      |     2 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     4 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              55 |           17 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              63 |           17 |
+| Yes          | No                    | No                     |              24 |            5 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |              55 |           21 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-----------------------------+-----------------------------------------+--------------------------+------------------+----------------+--------------+
+|         Clock Signal        |              Enable Signal              |     Set/Reset Signal     | Slice Load Count | Bel Load Count | Bels / Slice |
++-----------------------------+-----------------------------------------+--------------------------+------------------+----------------+--------------+
+|  clk_IBUF_BUFG              | kb/data_byte[1]                         | debounce_btn/rst         |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG              | kb/data_byte[0]                         | debounce_btn/rst         |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG              | kb/data_byte[4]                         | debounce_btn/rst         |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG              | kb/data_byte[6]                         | debounce_btn/rst         |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG              | kb/data_byte[7]                         | debounce_btn/rst         |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG              | kb/data_byte[2]                         | debounce_btn/rst         |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG              | kb/data_byte[3]                         | debounce_btn/rst         |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG              | kb/data_byte[5]                         | debounce_btn/rst         |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG              | kb/bit_count                            | debounce_btn/rst         |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG              | kb/count_buffer                         | debounce_btn/rst         |                1 |              5 |         5.00 |
+|  clk_IBUF_BUFG              | kb/led_data                             | debounce_btn/rst         |                2 |              9 |         4.50 |
+|  vga_ctrl/vga_driver/p_1_in |                                         | vga_ctrl/vga_driver/E[0] |                2 |             10 |         5.00 |
+|  vga_ctrl/vga_driver/p_1_in | vga_ctrl/vga_driver/E[0]                | debounce_btn/SR[0]       |                2 |             10 |         5.00 |
+|  clk_IBUF_BUFG              | kb/data_valid                           | debounce_btn/rst         |                7 |             19 |         2.71 |
+|  clk_IBUF_BUFG              | debounce_btn/button_counter[23]_i_1_n_0 |                          |                5 |             24 |         4.80 |
+|  clk_IBUF_BUFG              |                                         | debounce_btn/rst         |               15 |             53 |         3.53 |
+|  clk_IBUF_BUFG              |                                         |                          |               17 |             55 |         3.24 |
++-----------------------------+-----------------------------------------+--------------------------+------------------+----------------+--------------+
+
+
